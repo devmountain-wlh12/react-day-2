@@ -28,3 +28,19 @@ render() {
   </div>
 }
 ```
+
+3. The rule when you're passing a function as a prop:
+    * Whenever you pass a function as a prop, _you need to bind it!_
+
+```javascript
+constructor() {
+  super()
+  this.functionToPassAsProp = this.functionToPassAsProp.bind(this)
+}
+
+render() {
+  <div>
+    <ChildComponent someFn={this.functionToPassAsProp}>
+  </div>
+}
+```
